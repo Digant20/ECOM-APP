@@ -1,0 +1,86 @@
+.SideNav{
+background: #ffff;
+width: 532px;
+height: 100vh;
+display: flex;
+justify-content: center;
+position: fixed;
+bottom:0;
+top:58px;   /*top:50px; drops the size below the header */
+/* left: ${({oldSidebarState}) => (oldSidebarState ? '0' : '-100%')}; which side should the bar flow in */
+transition: 350ms;
+z-index: 10;
+}
+
+
+
+.Nav{ /* header css*/
+    justify-content: flex-start;
+    align-items: center;
+    height: 71px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    /* background-color: #FFFFFF; */
+    background-color: white;
+    display: flex;
+    padding: 0 20px;
+    box-sizing: border-box;
+    z-index: 90;
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.1);
+    color: rgb(36, 32, 32);
+    transition: transform 0.3s ease-out;
+}
+
+
+.CloseIcon {
+margin-left: 320px;
+font-size: 25px;
+justify-content: flex-start;
+align-items: center;
+}
+
+.Hamburger{
+margin-left: 2rem;
+font-size: 2rem;
+color: #292929;
+height: 80px;
+display: flex;
+justify-content: flex-start;
+align-items: center;
+}
+
+.SidebarWrap{
+    width: 100%;
+}
+
+/* @media (max-width: 861px){
+    .SideNav {
+        display: none;
+    }
+}
+
+@media (min-width: 861px){
+    .CloseIcon{
+        opacity: 0;
+        cursor:text;
+        
+    }
+}
+@media (min-width: 861px){
+    .Hamburger{
+        display: none;
+    }
+} */
+
+
+.Open{
+    transform: translateX(0);
+}
+.Close{
+    transform: translateX(-100%);
+}
+
+
+

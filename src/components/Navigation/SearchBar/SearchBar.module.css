@@ -1,0 +1,40 @@
+.SearchBar{
+    width: 60%;
+    height: 61%;
+    display: flex;
+    background-color: #F2F2F2;
+    border: 12px solid #F2F2F2;
+    margin-left: 15%;
+    border-radius: 5px;
+
+}
+.TextBox{   
+    border: 1px solid #F2F2F2;
+    width: 95%;
+    height: 20px;
+    background-color: #F2F2F2;
+    color:grey;
+    margin-left: 10px;
+    caret-color: black;
+    font-size: 15px;
+
+}
+
+.Icon{
+    text-align: center;
+    margin-top:2px;
+    
+}
+
+.TextBox:focus{
+    outline-width: 0;
+}
+
+
+.HeaderIcons{
+  margin-left: 16%;
+  font-size: 20px;
+}
+.Icons{
+    margin-left: 18px;
+}

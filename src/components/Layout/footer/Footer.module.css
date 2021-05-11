@@ -1,0 +1,32 @@
+.Footer{
+     /* margin-left: 570px; */
+    /*margin-right: 40px; */
+    height: 86px;
+    /* width: 100%; */
+    margin-left: 40px;
+    margin-right: 40px;
+    
+    background-color: #FFFFFF;
+    padding: 30px;
+    box-sizing: border-box;
+    z-index: 90;
+    text-align: center;
+    justify-content: space-between;
+    /* box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.3); */
+
+}
+.Social{
+    float:right;
+    opacity: 0.7;
+}
+
+.Copyright{
+   float: left;
+   opacity: 0.7;
+}
+
+
+.Links{
+    text-decoration: none;
+    color: grey;
+}

@@ -1,0 +1,110 @@
+.ReactCarousel{  
+    height:270px; 
+    margin-left: 40px;
+    margin-right: 40px;
+    opacity: 0.9;
+    margin-bottom: 2%;
+}
+
+
+
+@media (min-width:3000px ) and (max-width: 1024px) {
+    .ReactCarousel .Background1 .Background2 .Background3 .Background4{
+        width:50%;
+        height:400px;
+        
+        
+    }
+    
+}
+
+@media (min-width:464px ) and (max-width: 1024px) {
+    .ReactCarousel{
+        width:auto;
+        height:auto;
+        
+    }
+    
+}
+
+@media (min-width:0px ) and (max-width: 464px) {
+    .ReactCarousel{
+        width:auto;
+        height:auto;
+   
+    }
+    
+}
+
+
+ .Background1{
+    background-image: url('../../../assets/images/vegies.PNG');
+    background-repeat: no-repeat;
+    background-size: 540px 400px;
+    
+    height:400px;
+    padding: 10% 12%;
+    text-align: center;
+    margin-right:15px;
+    
+    
+}
+.Background2{
+    background-image: url('../../../assets/images/fruits.jpg');
+    background-repeat: no-repeat;
+    background-size: 540px 400px;
+    
+    height:400px;
+    padding: 10% 12%;
+    text-align: center;
+    margin-right:15px;
+    
+      
+}
+.Background3{
+    background-image: url('../../../assets/images/pome.jpg');
+    background-repeat: no-repeat;
+    background-size: 540px 400px;
+    /* width:500px; */
+    height:400px;
+    padding: 10% 12%;
+    text-align: center;
+    margin-right:15px;
+   
+}
+.Background4{
+    background-image: url('../../../assets/images/vegBasket.jpg');
+    background-repeat: no-repeat;
+    background-size: 540px 400px;
+    
+    height:400px;
+    padding: 10% 12%;
+    text-align: center;
+    margin-right:15px;
+    
+}
+
+
+
+
+/* for images cards */
+
+@media (min-width:464px ) and (max-width: 1024px) {
+    .Background1 .Background2 .Background3 .Background4{
+        width:auto;
+        height:auto;
+        background-repeat: no-repeat;
+        background-size: auto auto;
+    }
+    
+}
+
+@media (min-width:0px ) and (max-width: 464px) {
+    .Background1 .Background2 .Background3 .Background4{
+        width:auto;
+        height:auto;
+        background-repeat: no-repeat;
+        background-size: auto auto;
+    }
+    
+}

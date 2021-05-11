@@ -1,0 +1,22 @@
+.Items{
+    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-left: 40px;
+    margin-right: 40px;
+    background: white;
+    background-size: 100% 400px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+
+.Cards{
+
+    height: 250px;
+    width: 350px;
+    margin: 5px;
+    background-color: orange;
+    color: black;
+}
