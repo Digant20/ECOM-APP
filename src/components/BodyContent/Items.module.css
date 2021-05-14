@@ -5,18 +5,20 @@
     margin-right: 40px;
     background: white;
     background-size: 100% 400px;
-    position: relative;
-    display: flex;
-    justify-content: space-between;
 
 }
 
+.Images{
+  width: 220px;
+  height: 150px;
+   margin: 35px
+}
 
-.Cards{
+.CartButton{
+    float: right;
+}
 
-    height: 250px;
-    width: 350px;
-    margin: 5px;
-    background-color: orange;
-    color: black;
+
+.RupeeSymbol{
+    opacity: 0.8;
 }

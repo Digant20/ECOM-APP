@@ -38,7 +38,7 @@ const SideNav = (props) => {
            <div className={cssClass.Nav} >
                <NavLink to="#" className={cssClass.Hamburger}>
                     <FAicons.FaBars onClick={showSidebar}/>
-               </NavLink>
+               </NavLink> 
                <SearchBar />
 
            </div>           

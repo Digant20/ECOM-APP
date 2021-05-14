@@ -1,12 +1,13 @@
 .BodyContent{
-    height: 100%;
+    height: auto;
     margin-top: 2%;
     margin-bottom: 2%;
-    background: white;
-    background-size: 100% 400px;
-    position: relative;
-    padding: 15px;
     margin-left: 40px;
     margin-right: 40px;
+    background: white;
+    /* background-size: 100% 400px;
+    position: relative;
+    padding: 15px; */
+    
 
 }
