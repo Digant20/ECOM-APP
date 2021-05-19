@@ -13,7 +13,7 @@ import Select from '@material-ui/core/Select';
 
 import {FaAlignRight, FaCartPlus} from 'react-icons/fa';
 
-import cssClass from '../BodyContent/Items.module.css';
+import cssClass from './Items.module.css';
 import fruits from '../../assets/images/fruits.jpg';
 import Spinner from '../UI/Spinner/Spinner';
 
@@ -38,8 +38,25 @@ const useStyles = theme=>({
 });
 
 
+ //filtering code
+                   // console.log("inside BodyOnlyOnSearchFilter",product);
+                        
+                    
+                            // product.filter((val) =>{
+                            //         if(this.searchedInputTerm === '' ){
+                            //             return val;
+                            //         }else if(val.first_name.toLowerCase().includes(this.searchedInputTerm.toLowerCase())){
+                            //             return val;
+                            //         }
+                            //     }).map((valu, key) =>{
+                            //         return(
+                            //             // <Items key={key} searchedValue={valu.first_name}/>
+                            //             <p>testing</p>
+                            //         );
+                            //     }) 
 
-class Items extends Component{
+
+class BodyOnlyOnSearchFilter extends Component{
 
      state={
          token: null,
@@ -47,11 +64,14 @@ class Items extends Component{
          isMounted: true,
          isLoading: false,
          unitName: null,
-         
-         
     }
      
-    
+    //searched term
+    //  searchedInputTerm = this.props.searchedInputTerm;
+
+         
+                 
+  
     async componentDidMount(){
 
         this.setState({
@@ -68,7 +88,7 @@ class Items extends Component{
         
 
        //get the product list
-        const api = "/products";
+        const api = "/products/search/"+this.props.searchedInputTerm;
         const jwtToken ='Bearer '+this.state.token;
 
         axios.get(api, {
@@ -105,11 +125,12 @@ class Items extends Component{
       };
 
     render(){
+        //searched term
+        console.log(this.searchedInputTerm);
 
         const {classes} = this.props;
 
         //conditional rendering
-
         if(this.state.isLoading){
             return <Spinner />
         }else{
@@ -120,10 +141,7 @@ class Items extends Component{
     
                     if(product.inventories.length !== 0){ 
 
-                       
-                    return(
-                        
-    
+                        return(
                             <Card className={classes.root} key={product.id} justify="center">
                                 <CardContent>
                                     <Tooltip title="Add to cart" placement="top">
@@ -152,7 +170,7 @@ class Items extends Component{
                                                                                                 </Select>
                                                                                             </FormControl>
                                                                                             
-                                                                                    :<span style={{float: 'right', color:'grey'}}>{inventoryItems.unitName}</span>
+                                                                                    :  <span style={{float: 'right', color:'grey'}}>{inventoryItems.unitName}</span>
                                                          }
                                                         
                                                         
@@ -164,14 +182,7 @@ class Items extends Component{
                                      <Typography className={classes.productName} color="textSecondary">
                                         {product.name}, 
                                      </Typography>
-
-
-                                      
-                                        
-                                        
-                                       
-
-                                    
+                                  
                                 </CardContent>
                                 {/* <CardActions>
                                     <Button size="small">Learn More</Button>
@@ -189,13 +200,16 @@ class Items extends Component{
             )
             
         }
+        
+            
+        
 
         
     }
     
 }
 
-export default withStyles(useStyles)( Items);
+export default withStyles(useStyles)( BodyOnlyOnSearchFilter);
 
 
 

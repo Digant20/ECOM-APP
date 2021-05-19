@@ -15,9 +15,10 @@ class SearchBar extends Component  {
      }
 
   handleUserInput = (event) =>{
-                return(
-                    this.setState({searchedTerm: event.target.value})
-                );
+               
+                    this.setState({searchedTerm: event.target.value});
+                    console.log(this.state.searchedTerm);
+               
         }
     
     render(){
@@ -27,10 +28,12 @@ class SearchBar extends Component  {
         <Auxiliary >
             <div  className={cssClass.SearchBar}>
                     <FiSearch className={cssClass.Icon}/>
-                    <input type="text" className={cssClass.TextBox} 
-                        placeholder="What are you looking for?" 
-                        onChange={this.handleUserInput}
-                        />
+                    <input type="text"
+                            className={cssClass.TextBox} 
+                            placeholder="What are you looking for?" 
+                            onChange={this.handleUserInput}
+                            value={this.state.searchedTerm}
+                            />
             </div>
 
             <div className={cssClass.HeaderIcons}>

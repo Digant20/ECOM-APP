@@ -1,9 +1,9 @@
 import React from 'react'
-import cssClass from './Main.module.css';
+import cssClass from './WelcomeCard.module.css';
 import vegImage from '../../assets/images/vegies.PNG';
 
 
-const Main = () => {
+const WelcomeCard = () => {
     return (
         <main className={cssClass.Main}>
             <p>
@@ -24,4 +24,4 @@ const Main = () => {
     )
 }
 
-export default Main
+export default WelcomeCard
