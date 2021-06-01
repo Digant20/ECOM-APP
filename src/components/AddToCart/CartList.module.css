@@ -1,0 +1,29 @@
+.dt {
+    display: table;
+}
+
+.dtc {
+    display: table-cell;
+}
+
+.dt--fixed {
+    table-layout: fixed;
+    width: 100%;
+}
+
+.bg-black-10 {
+    background-color: rgba(0, 0, 0, .1);
+}
+
+.bg-black-05 {
+    background-color: rgba(0, 0, 0, .05);
+}
+
+.pv4 {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.tc {
+    text-align: center;
+}

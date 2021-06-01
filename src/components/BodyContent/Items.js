@@ -9,12 +9,12 @@ import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
-
-
 import {FaAlignRight, FaCartPlus} from 'react-icons/fa';
+import {connect} from 'react-redux';
+import {compose, bindActionCreators} from 'redux';
 
+import {addToCart, updateCartItemUnits} from '../../store/actions/CartAction';
 import cssClass from '../BodyContent/Items.module.css';
-import fruits from '../../assets/images/fruits.jpg';
 import Spinner from '../UI/Spinner/Spinner';
 
 const useStyles = theme=>({
@@ -47,8 +47,13 @@ class Items extends Component{
          isMounted: true,
          isLoading: false,
          unitName: null,
+        //  cartData: 
+        //      {
+        //       items: {},
+        //       units: 0
+        //     }
          
-         
+       
     }
      
     
@@ -104,7 +109,22 @@ class Items extends Component{
                 });
       };
 
+
+      addToCartAction = (product) =>{
+    //       var Data = {...this.state.cartData}
+    //       Data.items = product;
+    //       Data.units = unit;
+    //   this.setState({ cartData: Data });
+    //   console.log("inside addToCartAction: ",this.state.cartData );
+      this.props.addToCart(product);
+    }
+
+ 
+
     render(){
+
+        //getting data from the redux store
+        console.log("from the redux store",this.props.cartItems);
 
         const {classes} = this.props;
 
@@ -118,23 +138,23 @@ class Items extends Component{
                 this.state.dataItems.map((product)=>{
                     
     
-                    if(product.inventories.length !== 0){ 
+                    if(product.inventories.length !== 0){
 
+                        
                        
                     return(
-                        
-    
+   
                             <Card className={classes.root} key={product.id} justify="center">
                                 <CardContent>
                                     <Tooltip title="Add to cart" placement="top">
-                                        <button className={cssClass.CartButton}><FaCartPlus /></button>  
+                                        <button className={cssClass.CartButton} onClick={() => this.addToCartAction(product)}><FaCartPlus /></button>  
                                     </Tooltip>
                                     <img src={product.productImage} alt={product.name} className={cssClass.Images}/>
                                    
                                            { 
                                                 product.inventories.map((inventoryItems)=>(
                                                     <div>
-                                                        <h6 className={cssClass.RupeeSymbol}>&#x24; {inventoryItems.price}</h6>   
+                                                        <h4 className={cssClass.RupeeSymbol}>&#x24; {inventoryItems.price}</h4>   
                                                         {/* {product.inventories.length > 1 ? this.setState({unitNameArray: inventoryItems.unitName}) : null} */}
 
                                                         {product.inventories.length > 1 ?  <FormControl variant="outlined" className={classes.formControl}>
@@ -164,14 +184,7 @@ class Items extends Component{
                                      <Typography className={classes.productName} color="textSecondary">
                                         {product.name}, 
                                      </Typography>
-
-
-                                      
-                                        
-                                        
-                                       
-
-                                    
+                               
                                 </CardContent>
                                 {/* <CardActions>
                                     <Button size="small">Learn More</Button>
@@ -195,7 +208,16 @@ class Items extends Component{
     
 }
 
-export default withStyles(useStyles)( Items);
+
+
+const mapActionsToProps = (dispatch) =>{
+    return bindActionCreators( {
+        addToCart
+    }, dispatch )
+
+}
+
+export default compose(connect(null, mapActionsToProps), withStyles(useStyles))(Items);
 
 
 

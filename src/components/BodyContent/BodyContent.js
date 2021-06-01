@@ -5,6 +5,7 @@ import {makeStyles} from '@material-ui/core/styles';
 
 import cssClass from '../../components/BodyContent/BodyContent.module.css';
 import Items from './Items';
+import CartList from '../AddToCart/CartList';
 
 
 const style = makeStyles({
@@ -14,13 +15,14 @@ const style = makeStyles({
     } 
 });
 
-const BodyContent = () => {
+const BodyContent = (props) => {
 
     const classes = style();
 
     return (
 
         <div className={cssClass.BodyContent}>
+
              <Grid container  >
               
                     <Items />

@@ -1,0 +1,93 @@
+.SideNav{
+    background: #ffff;
+    width: 460px;
+    height: 100vh;
+    display: flex;
+    /* justify-content: center; */
+    position: fixed;
+    bottom:0;
+       /*top:50px; drops the size below the header */
+    /* left: ${({oldSidebarState}) => (oldSidebarState ? '0' : '-100%')}; which side should the bar flow in */
+    /* transition: 350ms; */
+    z-index: 10;
+    
+    -webkit-transform: translate3d(-100%, 0px, 0px);
+    transform: translate3d(-100%, 0px, 0px);
+    visibility: visible;
+    transition: transform 350ms ease-out;
+    -webkit-transition: all 350ms ease 0s;
+   
+    }
+
+    .cartOverflow{
+        overflow-x: hidden;
+        overflow-y: hidden;
+        height: 450px;
+    
+    }
+
+
+    .cartOverflow:hover{
+        overflow-y: auto;
+    }
+    
+ 
+    .CloseIcon {
+    margin-left: 355px;
+    font-size: 20px;
+    justify-content: flex-start;
+    align-items: center;
+    }
+
+
+    .onHoverCheckOutButton :hover{
+           opacity: 0.9;
+    }
+    
+    
+    /* @media (max-width: 861px){
+        .SideNav {
+            display: none;
+        }
+    }
+    
+    @media (min-width: 861px){
+        .CloseIcon{
+            opacity: 0;
+            cursor:text;
+            
+        }
+    }
+    @media (min-width: 861px){
+        .Hamburger{
+            display: none;
+        }
+    } */
+    
+    
+    .Open{
+        /*  marginLeft or marginright kind of property */
+        transform: translateX(-27.9%);
+       
+    }
+
+    .Close{
+        transform: translateX(0);
+    }
+
+    
+
+    .Close .SideNav{
+        -webkit-transform: translate3d(0px, 0px, 0px);
+        transform: translate3d(0px, 0px, 0px);
+        visibility: visible;
+    }
+    
+
+
+
+    
+
+    
+
+   

@@ -32,9 +32,15 @@
 
 
 .HeaderIcons{
-  margin-left: 16%;
+  margin-left: 91%;
   font-size: 20px;
+  position: absolute;
 }
 .Icons{
     margin-left: 18px;
+
+}
+
+.Icons:hover{
+    cursor: pointer;
 }

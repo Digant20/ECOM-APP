@@ -37,6 +37,7 @@ const SideNav = (props) => {
 
  
    let attachedClasses = [cssClass.SideNav,cssClass.Close];
+
    if(oldSidebarState){
        attachedClasses = [cssClass.SideNav,cssClass.Open];
    }
@@ -47,41 +48,41 @@ const SideNav = (props) => {
         //conditional rendering                                 
 
 searchInput === '' && searchInput.length <= 0 ?       <div>
-                                                <IconContext.Provider value={ {color:'#292929'} }>
-                                                <div className={cssClass.Nav} >
-                                                    <NavLink to="#" className={cssClass.Hamburger}>
-                                                            <FAicons.FaBars onClick={showSidebar}/>
-                                                    </NavLink> 
-                                                    <SearchBar searchInputMethod={handleSearchInput}/>
-                                                </div>           
-                                                
-                                                {/* <nav className={cssClass.SideNav} style={{left: cssStyle}}   oldSidebarState={oldSidebarState} > */}
+                                                        <IconContext.Provider value={ {color:'#292929'} }>
+                                                        <div className={cssClass.Nav} >
+                                                            <NavLink to="#" className={cssClass.Hamburger}>
+                                                                    <FAicons.FaBars onClick={showSidebar}/>
+                                                            </NavLink> 
+                                                            <SearchBar searchInputMethod={handleSearchInput}/>
+                                                        </div>           
+                                                        
+                                                        {/* <nav className={cssClass.SideNav} style={{left: cssStyle}}   oldSidebarState={oldSidebarState} > */}
 
-                                                <nav className={attachedClasses.join(' ')}    oldSidebarState={oldSidebarState} >
-                                                    
-                                                    <div >
-                                                            <div style = {{marginTop:'20px', marginBottom:'10px'}}>
-                                                                    <span style={{marginLeft: '2.5rem', color:'grey', fontSize:'1.2rem'}}>All Categories</span>
-                                                                    <NavLink to="#" className={cssClass.CloseIcon}>
-                                                                        <AiOutlineClose onClick={showSidebar} />
-                                                                    </NavLink>
-                                                            </div> 
+                                                        <nav className={attachedClasses.join(' ')}    oldSidebarState={oldSidebarState} >
+                                                            
+                                                            <div >
+                                                                    <div style = {{marginTop:'20px', marginBottom:'10px'}}>
+                                                                            <span style={{marginLeft: '2.5rem', color:'grey', fontSize:'1.2rem'}}>All Categories</span>
+                                                                            <NavLink to="#" className={cssClass.CloseIcon}>
+                                                                                <AiOutlineClose onClick={showSidebar} />
+                                                                            </NavLink>
+                                                                    </div> 
 
 
-                                                        {SideNavData.map((item, index) =>{
-                                                            return <NavigationItems item={item} key={index} />
-                                                        })}
-                                                    </div>
-                                                </nav>
+                                                                {SideNavData.map((item, index) =>{
+                                                                    return <NavigationItems item={item} key={index} />
+                                                                })}
+                                                            </div>
+                                                        </nav>
 
-                                                </IconContext.Provider>
+                                                        </IconContext.Provider>
 
-                                                <WelcomeCard /> 
-                                                <ReactCarousel /> 
-                                                <BodyContent /> 
-                                                <Footer />                                                   
+                                                        <WelcomeCard /> 
+                                                        <ReactCarousel /> 
+                                                        <BodyContent /> 
+                                                        <Footer />                                                   
 
-                                        </div>
+                                                 </div>
                      
                      
                                 :  
